@@ -1,0 +1,71 @@
+<html>
+<body>
+  <head>
+    <style>
+      table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 4px solid #ddd;
+}
+th{
+  color:#181818;
+  font-weight: bolder;
+  padding:12px ;
+  font-size: 22px;
+}
+td{
+  color:#202020;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+
+tr:hover {background-color:#DCDCDC; }
+.button:hover {
+  background-color: white;
+  color: black;
+}
+    </style>
+  </head>
+<div class="container">
+    <table >
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      
+      </tr>
+
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.age }}</td>
+        <td><div><button  class="button" style=" background-color:#555555;
+          color:white;
+          border: 3px solid whitesmoke;
+          font-size: 16px; border-radius: 4%; padding: 8px;" (click)="handleUpdate(user)">Update</button></div></td>
+        <td><div><button  style=" background-color:#555555;
+          color:white;
+          border: 3px solid whitesmoke;
+          font-size: 16px; border-radius: 4%; padding: 8px;"  (click)="deleteUser(user)" >Delete</button></div></td>
+        
+      </tr>
+    </table>
+    <br/>
+    </div>
+    <br/>
+    <button  style=" background-color:#555555;
+    color:white;
+    border: 3px solid whitesmoke;
+    font-size: 16px; border-radius: 4%; padding: 8px;" ><a style="text-decoration: none; color: white;" routerLink="/add">Add User</a></button>
+  </body>
+</html>
+
